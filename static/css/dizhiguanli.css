@@ -1,0 +1,177 @@
+html {
+  font-size: 20px;
+  height: 100%;
+}
+@media only screen and (min-width: 320px) and (min-height: 480px) {
+  html {
+    font-size: 85.333333px !important;
+  }
+}
+@media only screen and (min-width: 320px) and (min-height: 568px) {
+  html {
+    font-size: 85.3333333px !important;
+  }
+}
+@media only screen and (min-width: 360px) and (min-height: 640px) {
+  html {
+    font-size: 96px !important;
+  }
+}
+@media only screen and (min-width: 375px) and (min-height: 667px) {
+  html {
+    font-size: 100px !important;
+  }
+}
+@media only screen and (min-width: 414px) and (min-height: 736px) {
+  html {
+    font-size: 110.4px !important;
+  }
+}
+@media only screen and (min-width: 736px) and (min-height: 736px) {
+  html {
+    font-size: 192.26666667px !important;
+  }
+}
+@media only screen and (min-width: 768px) and (min-height: 736px) {
+  html {
+    font-size: 204.8px !important;
+  }
+}
+@media only screen and (min-width: 1024px) and (min-height: 736px) {
+  html {
+    font-size: 273.06666667px !important;
+  }
+}
+.dizhiguanli_header {
+  width: 100%;
+  height: 0.45rem;
+  line-height: 0.45rem;
+  background-color: #fff;
+  text-align: center;
+  font-size: 0.16rem;
+  border-bottom: 0.01rem solid #ccc;
+}
+.dizhiguanli_header i {
+  float: left;
+}
+.dizhiguanli_xinzeng {
+  background-color: #fff;
+  max-height: 0.56rem;
+  margin-bottom: 0.1rem;
+}
+.dizhiguanli_xinzeng :nth-child(1) {
+  font-size: 0.16rem;
+  color: #343434;
+  line-height: 0.56rem;
+  margin-left: 0.16rem;
+}
+.dizhiguanli_xinzeng :nth-child(2) {
+  font-size: 0.28rem;
+  color: #c1c1c1;
+  line-height: 0.56rem;
+  float: right;
+}
+.dizhiguanli_shouhuoxinxi {
+  background-color: #fff;
+  border-bottom: 0.01rem solid #ccc;
+}
+.dizhiguanli_shouhuoxinxi :nth-child(1) {
+  font-size: 0.16rem;
+  color: #343434;
+  margin-left: 0.16rem;
+  line-height: 0.46rem;
+}
+.dizhiguanli_shouhuoxinxi .dizhiguanli_xulian {
+  width: 3.43rem;
+  background-color: #F2F2F2;
+  height: 0.02rem;
+  margin: 0.2rem 0.15rem 0.2rem 0.15rem;
+}
+.dizhiguanli_shouhuoxinxi :nth-child(3) {
+  margin-left: 0.16rem;
+  font-size: 0.16rem;
+  color: #343434;
+}
+.dizhiguanli_shouhuoxinxi :nth-child(4) {
+  margin-left: 0.56rem;
+  font-size: 0.16rem;
+  color: #343434;
+}
+.dizhiguanli_shouhuoxinxi .dizhiguanli_moren {
+  width: 0.49rem;
+  height: 0.26rem;
+  background-color: #0B3A94;
+  color: #fff;
+  line-height: 0.26rem;
+  border-radius: 0.2rem;
+  display: inline-block;
+  text-align: center;
+  margin-top: 0.12rem;
+  margin-left: 0.19rem;
+  margin-right: 0.24rem;
+}
+.dizhiguanli_shouhuoxinxi :nth-child(7) {
+  font-size: 0.16rem;
+  color: #343434;
+  width: 2.68rem;
+  float: right;
+  margin-top: 0.1rem;
+  padding-bottom: 0.14rem;
+  height: 0.44rem;
+  line-height: 0.22rem;
+}
+.dizhiguanli_shouhuoxinxi2 {
+  background-color: #fff;
+  max-height: 1.01rem;
+  border-bottom: 0.01rem solid #c1c1c1;
+}
+.dizhiguanli_shouhuoxinxi2 :nth-child(1) {
+  font-size: 0.16rem;
+  color: #343434;
+  margin-left: 0.16rem;
+  line-height: 0.46rem;
+}
+.dizhiguanli_shouhuoxinxi2 :nth-child(2) {
+  margin-left: 0.56rem;
+  font-size: 0.16rem;
+  color: #343434;
+}
+.dizhiguanli_shouhuoxinxi2 :nth-child(4) {
+  font-size: 0.16rem;
+  margin-left: 1.08rem;
+  height: 0.44rem;
+  width: 2.68rem;
+  line-height: 0.22rem;
+  padding-bottom: 0.14rem;
+}
+.dizhiguanli_shanchu .dizhiguanli_xinxi {
+  width: 3.03rem;
+  height: 1.02rem;
+  float: left;
+  background-color: #fff;
+}
+.dizhiguanli_shanchu .dizhiguanli_xinxi :nth-child(1) {
+  font-size: 0.16rem;
+  margin-left: 0.2rem;
+  color: #343434;
+  margin-top: 0.12rem;
+  line-height: 0.5rem;
+}
+.dizhiguanli_shanchu .dizhiguanli_xinxi :nth-child(3) {
+  font-size: 0.16rem;
+  color: #343434;
+  margin-left: 0.2rem;
+  height: 0.44rem;
+  line-height: 0.22rem;
+  display: inline-block;
+}
+.dizhiguanli_shanchu .dizhiguanli_del {
+  float: right;
+  width: 0.72rem;
+  height: 1.02rem;
+  text-align: center;
+  line-height: 1.02rem;
+  background-color: #FF6F6F;
+  color: #fff;
+  font-size: 0.16rem;
+}

@@ -1,0 +1,41 @@
+.header {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  background-color: #fff;
+  text-align: center;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0.53333333rem;
+}
+.header i {
+  float: left;
+}
+.xiangqing {
+  background-color: #fff;
+}
+.xiangqing .xiangqing_title p {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 0.50666667rem;
+  margin-left: 0.13333333rem;
+  margin-bottom: 0.32rem;
+}
+.xiangqing .xiangqing_faburen {
+  margin-left: 0.21333333rem;
+  margin-right: 0.8rem;
+  font-size: 0.32rem;
+  color: skyblue;
+}
+.xiangqing .xiangqing_time {
+  color: #C1C1C1;
+}
+.xiangqing .xiangqing_img {
+  width: 100%;
+  text-align: center;
+}
+.xiangqing .xiangqing_img img {
+  height: 2.66666667rem;
+  width: 9.73333333rem;
+  padding: 0.26666667rem 0.06666667rem 0.26666667rem 0.06666667rem;
+}
