@@ -1,9 +1,8 @@
-@import "build.css";
-html,
-body {
-  background-color: #fff;
+@import '../../static/css/style.css';
+body{
+  background-color:#fff !important;
 }
-.geren_login {
+ .geren_login {
   width: 70%;
   margin: 0 auto;
 }

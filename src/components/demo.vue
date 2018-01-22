@@ -1,7 +1,6 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-   <router-link to="/Footer">跳转Home</router-link>
+  <div>
+    <x-header>地址管理</x-header>
   </div>
 </template>
 
@@ -9,7 +8,7 @@
 export default {
   data () {
     return {
-      msg: 'Welcome to Header!!!'
+      msg: 'Welcome to footer!!!'
     }
   },
   mounted(){
@@ -18,7 +17,7 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+<!-- Add "scoped" attribute to aalimit CSS to this component only -->
 <style scoped>
 h1, h2 {
   font-weight: normal;
@@ -27,11 +26,12 @@ ul {
   list-style-type: none;
   padding: 0;
 }
-li {
+li {  
   display: inline-block;
   margin: 0 10px;
 }
 a {
   color: #42b983;
 }
+/* @import '../../static/css/style.css' */
 </style>

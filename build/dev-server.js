@@ -1,5 +1,17 @@
 require('./check-versions')()
 
+
+
+
+
+
+
+
+
+
+
+
+
 var config = require('../config')
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
@@ -81,6 +93,17 @@ devMiddleware.waitUntilValid(() => {
   }
   _resolve()
 })
+// var CreditData =requir('../Credit.json');
+// // var abc = CreditData.data
+// var apiRoutes = express.Router();
+// apiRoutes.get('/CreditData', function (req, res) {
+//   res.json({
+//    status: 0,
+//    data: CreditData
+//   });
+//  });
+
+//  app.use('', apiRoutes);
 
 var server = app.listen(port)
 

@@ -1,4 +1,3 @@
-/*首页*/
 html {
   font-size: 20px;
   height: 100%;
@@ -42,6 +41,30 @@ html {
   html {
     font-size: 273.06666667px !important;
   }
+}
+body {
+  background-color: #fff;
+}
+.Home .kouzi_title {
+  font-size: 0.16rem;
+  color: #1a1a1a;
+  float: left;
+  margin-left: 0.15rem;
+  margin-top: 0.15rem;
+}
+.Home .kouzi_sousuo {
+  float: left;
+  height: 0.3rem;
+  margin-top: 0.15rem;
+  width: 3rem;
+  margin-bottom: 0.08rem;
+}
+.Home .kouzi_logo {
+  padding: 0.08rem 0.13rem;
+  margin-bottom: 0.32rem;
+}
+.Home .kouzi_logo .logo {
+  width: 100%;
 }
 .w {
   width: 100%;
@@ -134,26 +157,6 @@ html {
 .zhanwei {
   height: 0.59rem;
 }
-.footer {
-  width: 100%;
+.weui-tabbar {
   position: fixed;
-  bottom: 0px;
-  background-color: #fff;
-  text-align: center;
-}
-.footer i {
-  font-size: 0.28rem;
-}
-.footer ul {
-  height: 0.59rem;
-}
-.footer ul li {
-  float: left;
-  width: 25%;
-  height: 0.49rem;
-  text-align: center;
-  margin-top: 0.1rem;
-}
-.footer ul li a {
-  display: block;
 }

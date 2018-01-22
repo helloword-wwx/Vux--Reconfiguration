@@ -1,0 +1,35 @@
+{
+  "status":0,
+  "data":[{
+    "menuimg":"./src/assets/zhongxin.png",
+    "name":"学生证贷"
+  },
+  {
+    "menuimg":"./src/assets/zhima.png",
+    "name":"芝麻分贷"
+  },
+  {
+    "menuimg":"./src/assets/xinyongka.png",
+    "name":"信用卡贷"
+  },
+  {
+    "menuimg":"./src/assets/gongjijin.png",
+    "name":"公积金贷"
+  },
+  {
+    "menuimg":"./src/assets/yinhang.png",
+    "name":"银行贷"
+  },
+  {
+    "menuimg":"./src/assets/heihu.png",
+    "name":"黑户贷"
+  },
+  {
+    "menuimg":"./src/assets/jiefangdai.png",
+    "name":"按揭房贷"
+  },
+  {
+    "menuimg":"./src/assets/fenqi.png",
+    "name":"分期贷"
+  }]
+}

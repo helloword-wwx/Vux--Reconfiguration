@@ -8,10 +8,10 @@ import App from './App'
 import router from './router'
 import store from './store'
 import {WechatPlugin, AjaxPlugin, LoadingPlugin, ToastPlugin, AlertPlugin} from 'vux'
-
-
-
-
+// import vuei18n from 'vue-i18n' 
+// import vuxloader from 'vux-loader'
+// Vue.use(vuxloader)
+// import './assets/css/style.css';
 /* 加载插件
  */
 Vue.use(Vuex)
@@ -20,6 +20,7 @@ Vue.use(AjaxPlugin)
 Vue.use(LoadingPlugin)
 Vue.use(ToastPlugin)
 Vue.use(AlertPlugin)
+// Vue.use(vuei18n)
 
 /**
  *
@@ -31,7 +32,9 @@ if ('addEventListener' in document) {
     }, false);
 }
 
-
+// import '../static/css/style.css'
+// require('../static/css/style.css')
+require('./assets/css/style.css')
 /**
  *
  日志输出开关
@@ -52,7 +55,7 @@ Vue.prototype.serverName = serverName
  *异步请求处理
 */
 Vue.prototype.qs = Qs;
-Vue.prototype.$http.defaults.baseURL = 'http://elle.shanfengmao.com/Home/';//请求地址
+Vue.prototype.$http.defaults.baseURL = '';//请求地址
 Vue.prototype.$http.defaults.timeout = 5000;//请求超时设置
 Vue.prototype.$http.defaults.transformRequest[0] = (data) => {//请求前的数据处理
     if (data instanceof FormData) {
@@ -81,7 +84,17 @@ router.afterEach(function (to) {
   store.commit('updateLoading', false)
 })
 
+// import axios from 'axios';
 
+// // 2.0.3 想要在将来的每个子组件中的方法中均可以使用 this.$http去调用其方法执行ajax请求
+// //就要将axios对象挂载到vue的原型属性$http上
+// Vue.prototype.$http = axios;
+
+// // 设定axios的参数使得axios发出的ajax请求能够自动带上cookie
+// axios.defaults.withCredentials = true;
+
+// // 2.0.4 绑定到vue上
+// Vue.use(axios);
 
 /* eslint-disable no-new */
 new Vue({
