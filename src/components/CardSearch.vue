@@ -1,13 +1,18 @@
 <template>
   <div class="hello">
     <x-header>搜索信用卡</x-header>
-    <div class="sousuoxinyongka_nav">
+    <!-- <div class="sousuoxinyongka_nav">
         <ul class="clearfix">
           <li>银行<span class="caret"></span></li>    
           <li>卡权益<span class="caret"></span></li>
           <li>白金卡<span class="caret"></span></li>
         </ul>
-  </div>
+  </div> -->
+<group class="abc">
+    <selector class="" placeholder="银行" v-model="demo01" :options="list1"></selector>
+    <selector class="" placeholder="卡权益" v-model="demo02" :options="list2"></selector>
+    <selector class="" placeholder="白金卡" v-model="demo03" :options="list3"></selector>
+</group>
    <div class="CreditCard">
         <div class="CreditCard-left">
             <p class="baijin">友谊商务白金信用卡</p>
@@ -97,20 +102,58 @@
 </template>
 
 <script>
-import { XHeader } from "vux";
-// import BottomNav from '../components/Public/Bottom_nav.vue'
+import { Selector, Group, Cell, CellBox, XButton, XHeader } from "vux";
+
 export default {
   components: {
+    Group,
+    Selector,
+    Cell,
+    CellBox,
+    XButton,
     XHeader
-    // BottomNav
   },
   data() {
-    return {};
+    return {
+      demo01: "",
+      demo02: "",
+      demo03: "",
+      defaultValue: "gd",
+      plainList: ["广东", "广西"],
+      list1: [
+          { key: "gd", value: "广东" },
+          { key: "gx", value: "广西" }
+      ],
+      list2: [
+          { key: "gd", value: "广东" },
+          { key: "gx", value: "广西" }
+      ],
+      list3: [
+          { key: "gd", value: "广东" },
+          { key: "gx", value: "广西" }
+      ],
+    };
+  },
+  methods: {
+    onChange(val) {
+      console.log(val);
+    },
+    getValue(ref) {
+      this.$vux.alert.show({
+        title: "getFullValue",
+        content: this.$refs[ref].getFullValue()
+      });
+    }
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-@import '../../static/css/CardSearch.css'
+<style>
+@import "../../static/css/CardSearch.css";
+.weui-cells{
+    display: flex !important;
+    justify-content: space-around !important;
+}
+
 </style>

@@ -18,29 +18,96 @@
             <span>13538245154</span><br>
             <div>广东省广州市越秀区先烈中路80号19楼1903房间</div>
     </div>
-    <div class="dizhiguanli_shanchu clearfix">
-        <div class="dizhiguanli_xinxi">
-            <span>13538245154</span><br>
-            <span>广东省广州市越秀区先烈中路80号19楼1903房间</span>
+
+      
+      <swipeout-item :threshold=".5" underlay-color="#ccc">
+        <div slot="right-menu">
+          <swipeout-button @click.native="onButtonClick()" background-color="#336DD6">{{('保存')}}</swipeout-button>
+          <swipeout-button @click.native="del()" background-color="#D23934">{{('删除')}}</swipeout-button>
         </div>
-        <div class="dizhiguanli_del">删除</div>
-    </div>
+        <div slot="content" class="demo-content vux-1px-tb">
+   
+        <swipeout class="vux-1px-tb">
+      <swipeout-item transition-mode="follow">
+        <div slot="content"   style="padding:12px;">
+          <div class="dizhiguanli_shanchu clearfix">
+            <div class="dizhiguanli_xinxi">
+              <span>13538245154</span><br>
+              <span>广东省广州市越秀区先烈中路80号19楼1903房间</span>
+            </div>
+          <!-- <div class="dizhiguanli_del">删除</div> -->
+          </div>
+        </div>
+      </swipeout-item>
+    </swipeout>
+   </div>
+  </swipeout-item class="vux-o1">
+      <swipeout-item :threshold=".5" underlay-color="#ccc">
+        <div slot="right-menu">
+          <swipeout-button @click.native="onButtonClick()" background-color="#336DD6">{{('保存')}}</swipeout-button>
+          <swipeout-button @click.native="del()" background-color="#D23934">{{('删除')}}</swipeout-button>
+        </div>
+        <div slot="content" class="demo-content vux-1px-tb">
+        <swipeout class="vux-1px-tb">
+      <swipeout-item transition-mode="follow">
+        <div slot="content"   style="padding:12px;">
+          <div class="dizhiguanli_shanchu clearfix">
+            <div class="dizhiguanli_xinxi">
+              <span>13538245154</span><br>
+              <span>广东省广州市越秀区先烈中路80号19楼1903房间</span>
+            </div>
+          <!-- <div class="dizhiguanli_del">删除</div> -->
+          </div>
+        </div>
+      </swipeout-item>
+    </swipeout>
+   </div>
+  </swipeout-item>
   </div>
 </template>
 <script>
-import { XHeader } from "vux";
+import {
+  GroupTitle,
+  Swipeout,
+  SwipeoutItem,
+  SwipeoutButton,
+  XButton,
+  XHeader
+} from "vux";
+
 export default {
   components: {
-    XHeader,
-    
+    GroupTitle,
+    Swipeout,
+    SwipeoutItem,
+    SwipeoutButton,
+    XButton,
+    XHeader
+  },
+  methods: {
+    onButtonClick(type) {
+      alert("on button click " + type);
+    },
+    handleEvents(type) {
+      console.log("event: ", type);
+    },
+    del(){
+       console.log($(".dizhiguanli_xinxi"))
+       $(".vux-swipeout-item").remove()
+    }
   },
   data() {
-    return {};
+    return {
+      disabled: true
+    };
   }
 };
 </script>
 <style scoped>
-@import '../../static/css/style.css';
+@import "../../static/css/style.css";
+.demo-content {
+  padding: 10px 10px;
+}
 .dizhiguanli_xinzeng {
   background-color: #fff;
   max-height: 0.56rem;
@@ -70,7 +137,7 @@ export default {
 }
 .dizhiguanli_shouhuoxinxi .dizhiguanli_xulian {
   width: 3.43rem;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   height: 0.02rem;
   margin: 0.2rem 0.15rem 0.2rem 0.15rem;
 }
@@ -87,7 +154,7 @@ export default {
 .dizhiguanli_shouhuoxinxi .dizhiguanli_moren {
   width: 0.49rem;
   height: 0.26rem;
-  background-color: #0B3A94;
+  background-color: #0b3a94;
   color: #fff;
   line-height: 0.26rem;
   border-radius: 0.2rem;
@@ -158,9 +225,8 @@ export default {
   height: 1.02rem;
   text-align: center;
   line-height: 1.02rem;
-  background-color: #FF6F6F;
+  background-color: #ff6f6f;
   color: #fff;
   font-size: 0.16rem;
 }
-
 </style>

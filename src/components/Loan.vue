@@ -105,13 +105,21 @@
         <span slot="label">个人</span>
       </tabbar-item>
     </tabbar>
+		<w-l></w-l>
+		   <!-- <div class="w_loading">
+        <div id="loading">
+            <i></i>
+            <p>正在努力加载中....</p>
+        </div>
+    </div> -->
     </div>
 </template>
 
 <script>
 import { Tabbar, TabbarItem, XHeader, Group, Cell,Panel,Radio  } from "vux";
-
+import WL from '../components/Public/Wloading.vue'
 export default {
+	
   components: {
     XHeader,
     Tabbar,
@@ -119,14 +127,18 @@ export default {
     Group,
     Cell,
     Panel,
-    Radio
-  },
+		Radio,
+		WL
+	},
+	created(){
+		// this.getWL()
+	},
   methods: {
-  
+		
   },
   data () {
     return {
-    }
+		}
 }
 }
 </script>
@@ -134,4 +146,5 @@ export default {
 <style scoped>
 @import '../../static/css/style.css';
 @import '../../static/css/index.css';
+
 </style>

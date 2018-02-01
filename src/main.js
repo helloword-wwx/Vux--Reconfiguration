@@ -84,19 +84,7 @@ router.afterEach(function (to) {
   store.commit('updateLoading', false)
 })
 
-// import axios from 'axios';
 
-// // 2.0.3 想要在将来的每个子组件中的方法中均可以使用 this.$http去调用其方法执行ajax请求
-// //就要将axios对象挂载到vue的原型属性$http上
-// Vue.prototype.$http = axios;
-
-// // 设定axios的参数使得axios发出的ajax请求能够自动带上cookie
-// axios.defaults.withCredentials = true;
-
-// // 2.0.4 绑定到vue上
-// Vue.use(axios);
-
-/* eslint-disable no-new */
 new Vue({
  
   router,

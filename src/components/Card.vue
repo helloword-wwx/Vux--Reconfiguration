@@ -28,7 +28,7 @@
 				<router-link class="chakan" to="CardSearch">查看全部银行<x-icon type="ios-arrow-right" class="Card_icon" size="17"></x-icon></router-link>
 			</div>
 			<div class="xuxian2"></div>
-			<div class="Hotbanks">
+			<div class="Hotbanks clearfix">
 				<ul>
 					<li v-for="(item,index) in list.data" :key="index">
 					<router-link to="/CardSearch">
@@ -91,6 +91,7 @@
 			</div>
 		</div>
     <bottom-nav></bottom-nav>
+    		<!-- <w-l></w-l> -->
   </div>
   
 </template>
@@ -98,10 +99,13 @@
 <script>
 import { XHeader } from "vux";
 import BottomNav from "../components/Public/Bottom_nav.vue";
+import WL from '../components/Public/Wloading.vue'
+
 export default {
   components: {
     XHeader,
-    BottomNav
+    BottomNav,
+    WL
   },
   data() {
     return {

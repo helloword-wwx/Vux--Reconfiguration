@@ -24,19 +24,24 @@
 </template>
 
 <script>
+import jquery from '../../node_modules/jquery/dist/jquery.min.js';
+
 export default {
   data () {
     return {
-       
+
     }
   },
   mounted(){
- 
+    jquery("#submit").on("click",function(){
+          var str = jquery("form").serialize();
+          console.log(str);
+      })
 }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-@import '../../static/css/login.css'
+@import '../../static/css/login.css';
 </style>

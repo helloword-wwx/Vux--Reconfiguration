@@ -2,50 +2,12 @@
   <div class="app">
        <x-header>贷款</x-header>
        <div class="daikuan_add_nav">
-    <div class="select_module_con left clearfix">
-      <div class="select_result">
-        <span>综合排序</span>
-        <span class="triangle"></span>
-      </div>
-      <ul class="select">
-        <li>额度最高</li>
-        <li>利率最低</li>
-        <li>通过率高</li>
-      </ul>
-      <div class="select_result">
-        <span>不限金额</span>
-        <span class="triangle"></span>
-      </div>
-      <ul class="select_jine">
-        <li>1万以内</li>
-        <li>1-5万</li>
-        <li>5-10万</li>
-        <li>10万以上</li>
-      </ul>
-      <div class="select_result">
-        <span>不限期限</span>
-        <span class="triangle"></span>
-      </div>
-      <ul class="select_qixian">
-        <li>6月内</li>
-        <li>6-12月</li>
-        <li>12-24月</li>
-        <li>24月以上</li>
-      </ul>
-      <div class="select_result">
-        <span>不限类型</span>
-        <span class="triangle"></span>
-      </div>
-      <ul class="select_diya">
-        <li>抵押贷</li>
-        <li>身份证贷</li>
-        <li>不查征信</li>
-        <li>手机号贷</li>
-        <li>信用卡贷</li>
-        <li>芝麻分贷</li>
-        <li>公积金贷</li>
-      </ul>
-    </div>
+  <group class="abc">
+    <selector class="" placeholder="综合排序" v-model="demo01" :options="list"></selector>
+    <selector class="" placeholder="不限金额" v-model="demo02"  :options="list2"></selector>
+    <selector class="" placeholder="不限期限"  v-model="demo03" :options="list3"></selector>
+    <selector class="" placeholder="不限类型"  v-model="demo04" :options="list4"></selector>
+</group>
   </div>
   <div class="daikuan">
     <div class="qudao clearfix">
@@ -119,21 +81,71 @@
 </template>
 
 <script>
-import { XHeader } from "vux";
+import { Selector, Group, Cell, CellBox, XButton, XHeader } from "vux";
 
 export default {
   components: {
-    XHeader 
+    Group,
+    Selector,
+    Cell,
+    CellBox,
+    XButton,
+    XHeader
+  },
+  data() {
+    return {
+      demo01: "",
+      demo02: "",
+      demo03: "",
+      demo04: "",
+      defaultValue: "gd",
+      plainList: ["广东", "广西"],
+      list: [
+        { key: "ed", value: "额度最高" }, { key: "ll", value: "利率最高" },{key:"tg",value:"通过率高"}
+        ],
+      list2: [
+        { key: "ed", value: "1万以内" }, { key: "ll", value: "1-5万" },{key:"tg",value:"5-10万"},{key:"tg",value:"10万以上"}
+        ],
+      list3: [
+        { key: "ed", value: "6月内" }, { key: "ll", value: "6-12月" },{key:"tg",value:"12-24月"},{key:"tg",value:"24月以上"}
+        ],
+      list4: [
+        { key: "ed", value: "抵押贷" }, { key: "ll", value: "身份证贷" },{key:"tg",value:"不查征信"}, { key: "ed", value: "手机号贷" }, { key: "ll", value: "信用卡贷" },{key:"tg",value:"芝麻分贷"},{key:"tg",value:"公积金贷"}
+        ],
+    };
+  },
+  methods: {
+    onChange(val) {
+      console.log(val);
+    },
+    getValue(ref) {
+      this.$vux.alert.show({
+        title: "getFullValue",
+        content: this.$refs[ref].getFullValue()
+      });
+    }
   }
-}
+};
 </script>
 
-<style scoped>
+<style>
 @import '../../static/css/style.css';
+.weui-select{
+  font-size: 0.12rem;
+}
+.weui-cells{
+    margin-top: 0.05rem !important;
+    display: flex !important;
+    justify-content: space-around !important;
+    font-size: 0.12rem !important;
+}
+.vux-no-group-title{
+  margin-top: 0.1rem;
+}
 .daikuan_add_nav {
   background-color: #fff;
   width: 100%;
-  height: .64rem;
+  /* height: .64rem; */
   text-align: center;
 }
 .daikuan_add_nav .select_module_con {

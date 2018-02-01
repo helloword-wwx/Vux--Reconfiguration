@@ -1,184 +1,76 @@
 <template>
    <div class="app">
-       <x-header>添加新地址<a slot="right">保存</a></x-header>
-     <form action="post" id="formdata">
-      <div class="shouhuoren">
-          <label for="">收货人</label>
-          <input class="username" name="username" type="text">
-      </div>
-      <div class="xinzengdizhi_xuxian"></div>
-      <div class="lianxidianhua">
-          <label for="">手机号</label>
-          <input type="number" class="userphone" name="phone" pattern="[0-9]*">
-      </div>
-      <div class="xinzengdizhi_xuxian"></div>
-      <div class="xinzeng">
-        <label for="name">所在地区</label>
-       <input class="" id="demo1" type="text" value="湖北省 武汉市 武昌区" readonly="" data-code="420106" data-codes="420000,420100,420106">
-      </div>
-      <div class="xinzengdizhi_xuxian"></div>
-      <div class="xiangxidizhi">
-          <label for="">详细地址</label>
-          <input type="text" placeholder="请输入门牌号不少于5字">
-      </div>
-      <!-- <div class="xinzengdizhi_xuxian"></div> -->
-     <div class="morendizhi clearfix">
-       <label for="">设为默认</label>
-        <label class="iSwitch">
-            <input type="checkbox">
-            <i></i>
-        </label>
-     </div>
-</form>
+       <x-header>添加新地址<a slot="right" @click="postform()">保存</a></x-header>
+  <form action="">
+    <group>
+      <x-input title="姓名" name="username" placeholder="请输入姓名" is-type="china-name"></x-input>
+    </group>
+    <group>
+      <x-input title="手机号码" name="mobile" placeholder="请输入手机号码" keyboard="number" is-type="china-mobile"></x-input>
+    </group>
+    <group>
+    <x-address :title="title"   v-model="value_0_1" :list="addressData" placeholder="请选择地址">
+      <template slot="title" slot-scope="props"><!-- use scope="props" when vue < 2.5.0 -->
+        <span :class="props.labelClass" :style="props.labelStyle" style="height:24px;">
+          <span style="vertical-align:middle;">所在地区</span>
+        </span>
+      </template>
+    </x-address>
+    </group>
+    <group>
+      <x-input :placeholder="('详细地址')"></x-input>
+      <x-textarea :max="200" name="description" :placeholder="('')"></x-textarea>
+    </group>
+  </form>
+  <group>
+    <x-switch title="设为默认" ></x-switch>
+  </group>
 </div>
    
 </template>
 <script>
-import { XHeader } from "vux";
+import {
+  Group,
+  XAddress,
+  ChinaAddressV4Data,
+  XButton,
+  Cell,
+  Value2nameFilter as value2name,
+  XHeader,
+  XInput,
+  XTextarea,
+  XSwitch
+} from "vux";
+
 export default {
   components: {
+    Group,
+    XAddress,
+    XButton,
+    Cell,
     XHeader,
-    
+    XInput,
+    XTextarea,
+    XSwitch
   },
   data() {
-    return {};
+    return {
+      title: "默认为空",
+      value_0_1: [],
+      addressData: ChinaAddressV4Data
+    };
+  },
+  methods: {
+    postform(){
+      console.log(this.form)
+    }
+  },
+  created(){
+      this.postform()
   }
 };
 </script>
-
 <style scoped>
-@import '../../static/css/style.css';
-@import '../../static/css/jquery-weui.css';
-.shouhuoren {
-  height: 0.4rem;
-  line-height: .6rem;
-  margin-left: 0.16rem;
-}
-.shouhuoren :nth-child(1) {
-  font-size: 0.16rem;
-  color: #535353;
-}
-.shouhuoren :nth-child(2) {
-  margin-left: 0.4rem;
-  font-size: .16rem;
-}
-.lianxidianhua {
-  height: 0.4rem;
-  line-height: .4rem;
-  margin-left: 0.16rem;
-}
-.lianxidianhua :nth-child(1) {
-  font-size: 0.16rem;
-  color: #535353;
-}
-.lianxidianhua :nth-child(2) {
-  margin-left: 0.4rem;
-  font-size: .16rem;
-}
-.xinzengdizhi_xuxian {
-  background-color: #f0f0f0;
-  height: 0.02rem;
-  margin-left: 0.17rem;
-  margin-right: 0.15rem;
-  margin-bottom: 0.16rem;
-  margin-top: 0.16rem;
-}
-.xinzeng {
-  height: 0.4rem;
-  line-height: .4rem;
-  margin-left: 0.16rem;
-}
-.xinzeng :nth-child(1) {
-  font-size: 0.16rem;
-  color: #535353;
-}
-.xinzeng :nth-child(2) {
-  margin-left: 0.4rem;
-  font-size: .16rem;
-}
-.xiangxidizhi {
-  height: 0.4rem;
-  line-height: .4rem;
-  margin-left: 0.16rem;
-  margin-bottom: 0.5rem;
-}
-.xiangxidizhi :nth-child(1) {
-  font-size: 0.16rem;
-  color: #535353;
-}
-.xiangxidizhi :nth-child(2) {
-  width: 100%;
-  height: auto;
-  font-size: 0.14rem;
-}
-.morendizhi {
-  height: 0.4rem;
-  line-height: .4rem;
-  margin-left: 0.16rem;
-}
-.morendizhi :nth-child(1) {
-  font-size: 0.16rem;
-  color: #535353;
-}
-.morendizhi :nth-child(2) {
-  float: right;
-  margin-right: 0.1rem;
-}
-.iSwitch {
-  position: relative;
-  display: inline-block;
-  width: .60rem;
-  height: 0.3rem;
-  border-radius: 0.15rem;
-  background: #dcdcdc;
-  border: 0.01rem solid #dcdcdc;
-  box-shadow: 0 0 0.05rem #dcdcdc;
-  overflow: hidden;
-  vertical-align: middle;
-  transition: background-color 0.1s, border 0.1s;
-}
-.iSwitch input {
-  visibility: hidden;
-}
-.iSwitch i {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: inline-block;
-  width: 50%;
-  height: 100%;
-  border-radius: 100%;
-  background: #fff;
-}
-.iSwitch i::before {
-  content: " ";
-  display: none;
-  width: 200%;
-  height: 100%;
-  border-radius: 25%;
-  background: #61cafd;
-}
-.iSwitch i::after {
-  content: " ";
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 2;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  background: #fff;
-}
-.iSwitch input:checked + i {
-  transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35), -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
-}
-.iSwitch input:checked + i:before {
-  display: inline-block;
-  transform: translateX(-50%);
-}
 
 </style>
 
